@@ -1,0 +1,12 @@
+version: v1
+services:
+  oss:
+    image: bitnami/minio
+    volumes:
+      - "./media:/data"
+    container_name: video-minio
+    environment:
+      - MINIO_ACCESS_KEY=minio-access-key
+      - MINIO_SECRET_KEY=minio-secret-key
+    ports:
+      - "9000:9000"
